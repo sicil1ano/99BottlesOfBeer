@@ -24,13 +24,12 @@ namespace _99BottlesSlim
 
         static void WriteLyrics(string beverage, int numberOfBottles)
         { 
-            while(numberOfBottles > 0)
-            {
-                Console.WriteLine(String.Format("{0} bottle{1} of {2} on the wall, {0} bottle{1} of {2}. \nTake one down, pass it around.\n", numberOfBottles, (numberOfBottles == 1) ? "" : "s", beverage));
-                numberOfBottles--;
+            for (int i = numberOfBottles; i > 0; --i)
+            { 
+                Console.WriteLine(String.Format("{0} bottle{1} of {2} on the wall, {0} bottle{1} of {2}. \nTake one down, pass it around.\n", i, (i == 1) ? "" : "s", beverage));
             }
 
-            Console.WriteLine(String.Format("No more bottles of {0} on the wall, no more bottles of {0}. \nGo to the store and buy some more, 99 bottles of {0} on the wall! Oh yeah!\n", beverage));
+            Console.WriteLine(String.Format("No more bottles of {0} on the wall, no more bottles of {0}. \nGo to the store and buy some more, {1} bottles of {0} on the wall! Oh yeah!\n", beverage,numberOfBottles));
         }
     }
 }
